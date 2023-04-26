@@ -3,7 +3,7 @@ const heartIcon = document.querySelectorAll(".Wishlist");
 let img;
 let productName;
 let randomPrice;
-let text;
+let text = [];
 document.addEventListener("click", addToWish);
 
 function addToWish(event) {
@@ -14,7 +14,7 @@ function addToWish(event) {
       img = heartIcon[i].parentNode.parentNode.querySelector("img");
       productName = heartIcon[i].parentNode.parentNode.parentElement.querySelector("h3").textContent;
       randomPrice = Math.floor(Math.random() * (300 - 100 + 1)) + 100;
-      text = `<tr><td class="product-thumbnail">
+      text.push(`<tr><td class="product-thumbnail">
                           <a href="#">${img}</a>
                         </td>
                         <td class="product-name"><a href="#">${productName}</a></td>
@@ -27,10 +27,8 @@ function addToWish(event) {
                             <td class="product-subtotal">$${randomPrice - 50}</td>
                             <td class="product-wishlist-cart">
                             <a href="#">add to cart</a>
-                            </td></tr>`;
-
-      window.localStorage.setItem("Wishes", text);
-
+                            </td></tr>`);
+      localStorage.setItem("Wishes", text);
     }
   }
 }
