@@ -1,19 +1,26 @@
 //Bismillah
 
 const heartIcon = document.querySelectorAll('.Wishlist')
-// const
+export const tableBody = document.getElementById('wishTable')
 
-document.addEventListener('click', (event) => {
+export let img;
+export let productName;
+export let randomPrice;
+
+document.addEventListener('click', addToWish);
+export function addToWish(event) {
     event.preventDefault();
     const target = event.target;
     for (let i = 0; i < heartIcon.length; i++) {
         if (target == heartIcon[i]) {
-            const img = heartIcon[i].parentNode.parentNode.querySelector('img');
-            const name = heartIcon[i].parentNode.parentNode.parentElement.querySelector('h3').textContent
-            console.log(img, name)
+            img = heartIcon[i].parentNode.parentNode.querySelector('img');
+            productName = heartIcon[i].parentNode.parentNode.parentElement.querySelector('h3').textContent;
+            randomPrice = Math.floor(Math.random() * (300 - 100 + 1)) + 100;
+            console.log(img, randomPrice)
+
         }
     }
-})
+}
 
 // < tr >
 //                     <td class="product-thumbnail">
