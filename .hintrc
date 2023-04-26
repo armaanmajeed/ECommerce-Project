@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "axe/forms": "off",
+    "axe/name-role-value": "off",
+    "button-type": "off",
+    "axe/aria": [
+      "default",
+      {
+        "aria-required-parent": "off"
+      }
+    ]
+  }
+}
