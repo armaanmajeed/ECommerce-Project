@@ -1,4 +1,3 @@
-//Bismillah
 const heartIcon = document.querySelectorAll(".Wishlist");
 const items = document.getElementById("items");
 // console.log(items);
