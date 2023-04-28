@@ -12,7 +12,7 @@ function addToWish(event) {
       img = heartIcon[i].parentNode.parentNode.querySelector("img");
       productName = heartIcon[i].parentNode.parentNode.parentElement.querySelector("h3").textContent;
       randomPrice = Math.floor(Math.random() * (300 - 100 + 1)) + 100;
-
+      // Ready text
       text.push(`<tr>
                     <td class="product-thumbnail">
                       <a href="#">${img.outerHTML}</a>
