@@ -6,7 +6,6 @@ let text = [];
 document.addEventListener("click", addToWish);
 
 function addToWish(event) {
-  // event.preventDefault();
   const target = event.target;
   for (let i = 0; i < heartIcon.length; i++) {
     if (target.id == heartIcon[i].id) {
@@ -16,7 +15,7 @@ function addToWish(event) {
 
       text.push(`<tr>
                     <td class="product-thumbnail">
-                      <a href="#">${img}</a>
+                      <a href="#">${img.outerHTML}</a>
                     </td>
                     <td class="product-name"><a href="#">${productName}</a></td>
                     <td class="product-price-cart"><span class="amount">$${randomPrice}</span></td>
@@ -31,7 +30,6 @@ function addToWish(event) {
                     </td>
                   </tr>`);
     }
+    localStorage.setItem("item", JSON.stringify(text));
   }
-  console.log(text);
 }
-export { text };

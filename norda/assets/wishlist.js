@@ -1,7 +1,5 @@
-import { text } from './shop.js';
+let text = JSON.parse(localStorage.getItem("item"));
 
 const items = document.getElementById("items");
 
-for (let item of text) {
-    items.innerHTML += item;
-}
+items.innerHTML += text;
